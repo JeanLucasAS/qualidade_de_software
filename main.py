@@ -5,7 +5,7 @@ from pymongo.server_api import ServerApi
 
 # Conexão com o MongoDB Atlas
 client = MongoClient(
-    API_KEY,
+    "mongodb+srv://admin:admin@cluster0.u5eyg23.mongodb.net/",
     server_api=ServerApi('1')
 )
 
