@@ -3,7 +3,7 @@ import argparse
 from main import mostrar_documentos
 
 def main():
-    parser = argparse.ArgumentParser(description="Visualizar documentos do MongoDB..")
+    parser = argparse.ArgumentParser(description="Visualizar documentos do MongoDB...")
     parser.add_argument(
         "--colecao",
         choices=["players", "cards", "battles"],
