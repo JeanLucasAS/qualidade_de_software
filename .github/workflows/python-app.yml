@@ -24,7 +24,7 @@ jobs:
         python -m pip install --upgrade pip
         pip install pymongo
     - name: Set OPCAO environment variable
-      run: echo "OPCAO=1" >> $GITHUB_ENV  # Definindo um valor para a variável OPCAO
+      run: echo "OPCAO=1" >> $GITHUB_ENV  # Definindo um valor para a variável OPCAO no GitHub Actions
     - name: Run the application
       run: |
-        python app.py  # Isso agora usará a variável OPCAO definida anteriormente
+        python app.py  # O script agora usará a variável OPCAO configurada
