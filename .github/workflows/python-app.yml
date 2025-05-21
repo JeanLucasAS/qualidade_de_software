@@ -15,16 +15,25 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+
     - name: Set up Python 3.10
       uses: actions/setup-python@v2
       with:
         python-version: "3.10"
+
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
         pip install pymongo
-    - name: Set OPCAO environment variable
-      run: echo "OPCAO=1" >> $GITHUB_ENV  # Definindo um valor para a variável OPCAO no GitHub Actions
-    - name: Run the application
+
+    - name: Run app.py com coleção 'players'
       run: |
-        python app.py  # O script agora usará a variável OPCAO configurada
+        python app.py --colecao players
+
+    - name: Run app.py com coleção 'cards'
+      run: |
+        python app.py --colecao cards
+
+    - name: Run app.py com coleção 'battles'
+      run: |
+        python app.py --colecao battles
