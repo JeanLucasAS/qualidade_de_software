@@ -17,18 +17,18 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v2  # Corrigido para a versão v2
     - name: Set up Python 3.10
-      uses: actions/setup-python@v3
+      uses: actions/setup-python@v2  # Alterado para v2 (a versão mais estável no momento)
       with:
         python-version: "3.10"
     - name: Install dependencies
-    run: |
-      python -m pip install --upgrade pip
-      pip install pymongo
-    - name:
       run: |
-        python app.py
+        python -m pip install --upgrade pip
+        pip install pymongo
+    - name: Run the application
+      run: |
+        python app.py  # Este passo está chamando o seu aplicativo
     - name: Test with pytest
       run: |
-        pytest
+        pytest  # Certifique-se de que os testes estão configurados
